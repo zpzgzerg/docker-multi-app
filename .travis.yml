@@ -22,13 +22,13 @@ after_success:
   - docker push zpzgzerg/docker-nginx
 
 deploy:
-  provider: "elasticbeanstalk"
+  provider: elasticbeanstalk
   region: ap-northeast-2
   app: docker-multi-app
   env: Dockermultiapp-env
   bucket_name: elasticbeanstalk-ap-northeast-2-262840429927
   bucket_path: docker-multi-app
-  on
+  on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_ACCESS_KEY
